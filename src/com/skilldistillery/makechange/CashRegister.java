@@ -6,6 +6,9 @@ public class CashRegister {
 		// For this hw, it is okay to have everything inside main
 			// creating other methods is optional 
 		
+		double amount;
+		double price; 
+		
 	}
 
 }
