@@ -10,10 +10,14 @@ public class CashRegister {
 		
 		Scanner sc = new Scanner(System.in); 
 		
-		double amount = 0;
-		double price = 0; 
+		double purchasePrice = 0; // initial price of the item 
+		double amountTendered = 0; // representing how much money was tendered by the customer 
 		// TODO add sc variable
+		// TODO prompt the user to enter the price of the item 
+		System.out.println("Please enter the purchase price of your item: "); 
 		double userInput = sc.nextDouble(); 
+		// reassign purchasePrice to the value of the userInput
+		purchasePrice = userInput; 
 		
 		// TODO don't forget to close the scanner!!! 
 		sc.close(); 
