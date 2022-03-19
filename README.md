@@ -35,8 +35,14 @@ If the amount tendered is more than the cost of the item, display the number of 
 * Eclipse
 * git 
 * GitHub 
-* Slack  
+* Slack
+* Zoom  
 
 ## Lessons Learned 
 
-TODO: WRITE THIS... 
+* The modulus operator
+* Don't stay stuck! Don't be afraid to ask for help. 
+
+The modulus operator was very important to the implementation on this project. 
+
+I got stuck for a while on how to approach User Story #4. Getting into a Zoom meeting room with one of the TAs and talking through the issue helped me considerably. SD John walked me through how to approach declaring my variables in my else if block using the modulus operator. Once he helped walk me through the first couple of declarations, the rest of the variable declaration expressions made a lot of sense. 
