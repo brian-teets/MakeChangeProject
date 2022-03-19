@@ -40,51 +40,105 @@ public class CashRegister {
 			// TODO Seem to need some way of storing current count or tally and continuing to make change 
 				// test conditions in assignment will only check up through amount tendered of 20.00 
 			double changeRequired = amountTendered - purchasePrice; 
-			int dollars = (int)changeRequired; 
+			int dollars = (int)changeRequired; // casting and reassigning the value of changeRequired 
 			float cents = (float)(changeRequired - dollars); // SD John suggested float to declare cents 
 				// as it would be a more accurate estimate
-			int fiftyDollarBill = dollars / 50;
-			int twentyDollarBill = (dollars % 50) / 20; 
-			int tenDollarBill = (dollars % 50 % 20) / 10; 
-			int fiveDollarBill = ((dollars % 50 % 20) % 10) / 5; // (dollars % 10) / 5;
-			int oneDollarBill =  ( (dollars % 50 % 20 % 10 % 5) ) / 1;  // ((dollars % 10) % 5 ) / 1; 
-			int quarter = (int)(cents / 0.25); // cents was declared as a float, so must cast an int, 
+			int hundredDollarBill = dollars / 100;
+			int fiftyDollarBill =  (dollars % 100)  / 50;
+			int twentyDollarBill = (dollars % 100 % 50) / 20; 
+			int tenDollarBill = (dollars % 100 % 50 % 20) / 10; 
+			int fiveDollarBill = ((dollars % 100 % 50 % 20) % 10) / 5; // (dollars % 10) / 5;
+			int oneDollarBill =  ( (dollars % 100 % 50 % 20 % 10 % 5) ) / 1;  // ((dollars % 10) % 5 ) / 1; 
+			int quarter = (int)(cents / 0.25); // cents was declared as a float, so must cast an int 
 				// since we're using decimals now 
 			int dime = (int)((cents % 0.25) / 0.10); 
 			int nickel = (int)(((cents % 0.25) % 0.10 ) / 0.05);  
 			int penny = (int)Math.round(( cents % 0.25 % 0.10 % 0.05 ) / 0.01 );  
 			
-			if(fiftyDollarBill > 0) {
-				System.out.println(fiftyDollarBill + " fifty dollar bill "); 
+			if(hundredDollarBill > 0) { 
+				if(hundredDollarBill == 1) {
+					System.out.println(hundredDollarBill + " hundred dollar bill");
+				}
+				else {
+					System.out.println(hundredDollarBill + " hundred dollar bills"); 
+				}
+			}
+			if(fiftyDollarBill > 0) { 
+				if(fiftyDollarBill == 1) {
+					System.out.println(fiftyDollarBill + " fifty dollar bill");
+				}
+				else {
+					System.out.println(fiftyDollarBill + " fifty dollar bills"); 
+				}
 			}
 			if(twentyDollarBill > 0) {
-				System.out.println(twentyDollarBill + " twenty dollar bill "); 
+				if(twentyDollarBill == 1) {
+					System.out.println(twentyDollarBill + " twenty dollar bill");
+				}
+				else {
+					System.out.println(twentyDollarBill + " twenty dollar bills"); 
+				}
 			}
 			if(tenDollarBill > 0) {  
-				System.out.println(tenDollarBill + " ten dollar bill ");
+				if(tenDollarBill == 1) {
+					System.out.println(tenDollarBill + " ten dollar bill");
+				}
+				else {
+					System.out.println(tenDollarBill + " ten dollar bills"); 
+				}
 			} 
 			if(fiveDollarBill > 0) {
-				System.out.println(fiveDollarBill + " five dollar bill "); 
+				if(fiveDollarBill == 1) {
+					System.out.println(fiveDollarBill + " five dollar bill");
+				}
+				else {
+					System.out.println(fiveDollarBill + " five dollar bills"); 
+				} 
 			}
 			if(oneDollarBill > 0) {
-				System.out.println(oneDollarBill + " one dollar bill "); 
+				if(oneDollarBill == 1) {
+					System.out.println(oneDollarBill + " one dollar bill");
+				}
+				else {
+					System.out.println(oneDollarBill + " one dollar bills"); 
+				}  
 			}
 			if(quarter > 0) {
-				System.out.println(quarter + " quarter "); 
+				if(quarter == 1) {
+					System.out.println(quarter + " quarter");
+				}
+				else {
+					System.out.println(quarter + " quarters"); 
+				} 
 			}
 			if(dime > 0) {
-				System.out.println(dime + " dime "); 
+				if(dime == 1) {
+					System.out.println(dime + " dime");
+				}
+				else {
+					System.out.println(dime + " dimes"); 
+				} 
 			}
 			if(nickel > 0) {
-				System.out.println(nickel + " nickel "); 
+				if(nickel == 1) {
+					System.out.println(nickel + " nickel");
+				}
+				else {
+					System.out.println(nickel + " nickels"); 
+				} 
 			}
 			if(penny > 0) {
-				System.out.println(penny + " penny "); 
+				if(penny == 1) {
+					System.out.println(penny + " penny "); 
+				}
+				else {
+					System.out.println(penny + " pennies "); 
+				}
 			} 
-		}
+		} // end of else if(amountTendered > purchasePrice) block 
 
 		// TODO don't forget to close the scanner!
 		sc.close();
 	}  // end of main method 
 
-}  // end of CashRegister class 
+}  // end of CashRegister class  
