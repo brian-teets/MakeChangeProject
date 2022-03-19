@@ -29,6 +29,22 @@ Display an appropriate message if the customer provided too little money or the 
 User Story #4
 If the amount tendered is more than the cost of the item, display the number of bills and coins that should be given to the customer. 
 
+## How To Run The Program
+
+* It is assumed the user has an IDE such as Eclipse. 
+* Download and install the .java file to local Eclipse workspace
+* Run the program
+
+	* User / tester will be cash register attendant / cashier. 
+	* When prompted, tester / attendant will enter a decimal number for the price of an item to purchase. Hit return.
+	* When prompted, tester / attendant will enter a decimal number for how much was tendered by the customer. Hit return.
+	* The program will now print out some information: 
+		* If the amount tendered is less than the purchase price, then you will see a message that not enough money was tendered by the customer. 
+		* If the amount tendered is exactly the amount of the purchase price, then you will see an appropriate message. 
+		* If the amount tendered is greater than the amount of the purchased item price, then the program will print out the appropriate amount of change to give back to the customer.
+		
+* Note: This program does not have a loop implemented in the solution. To run various scenarios, the user will need to re-run the program. 
+
 ## Technologies / Skills Used 
 
 * Java
