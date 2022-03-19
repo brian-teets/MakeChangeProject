@@ -142,3 +142,18 @@ public class CashRegister {
 	}  // end of main method 
 
 }  // end of CashRegister class  
+// TODO test conditions listed in Grading section of project  
+/*
+ * You will be given either a pass or fail based on whether your code works given all of the following test conditions:
+ * 
+ * Amount: .67, Tendered: .50, Result: Error message
+ * Amount: .67, Tendered: 1.00, Result: 1 quarter, 1 nickel, 3 pennies.
+ * Amount: .59, Tendered: 1.00, Result: 1 quarter, 1 dime, 1 nickel, 1 penny.
+ * Amount: 3.96, Tendered: 20.00, Result: 1 ten dollar bill, 1 five dollar bill, 1 one dollar bill, 4 pennies.
+ * Amount: any amount less than 20.00, Tendered: anything greater than amount: correct denominations for correct change.
+ * 
+ * If the project does work with all of the above test conditions, you will be given a 1 for this week's project.
+ * 
+ * If the project does not work with the above test conditions, you will be given a 0 for this week's project.
+ * 
+*/
