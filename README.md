@@ -31,8 +31,8 @@ If the amount tendered is more than the cost of the item, display the number of 
 
 ## How To Run The Program
 
-* It is assumed the user has an IDE such as Eclipse. 
-* Download and install the .java file to local Eclipse workspace
+* It is assumed the user has an IDE, such as Eclipse. 
+* Download and install the .java file to local Eclipse workspace.
 * Run the program
 
 	* User / tester will be cash register attendant / cashier. 
