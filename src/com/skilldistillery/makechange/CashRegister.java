@@ -39,16 +39,23 @@ public class CashRegister {
 			System.out.println(" ... calculating change needed, one moment ... "); 
 			// TODO Seem to need some way of storing current count or tally and continuing to make change 
 				// test conditions in assignment will only check up through amount tendered of 20.00 
-			double changeRequired = 0.0;
-			double tenDollarBill = 0.0;
-			double fiveDollarBill = 0.0;
-			double quarter = 0.0;
-			double dime = 0.0;
-			double nickel = 0.0; 
-			double penny = 0.0; 
-			if(amountTendered % 20.0 == 0) {  // Check if amountTendered divisible by 20?
-				
+			double changeRequired = amountTendered - purchasePrice; 
+			int dollars = (int)changeRequired; 
+			float cents = (float)(changeRequired - dollars); 
+			int tenDollarBill = dollars / 10;
+			int fiveDollarBill = (dollars % 10) / 5;
+			int oneDollarBills = ((dollars % 10) % 5 ) / 1; 
+			int quarter = (int)(cents / 0.25); 
+			int dime = (int)((cents % 0.25) / 0.10); 
+			int nickel = (int)(((cents % 0.25) % 0.10 ) / 0.05);  
+			int penny = (int)Math.round(( cents % 0.25 % 0.10 % 0.05 ) / 0.01 );  
+			
+			if(tenDollarBill > 0) {  
+				System.out.println(tenDollarBill + " ten dollar bills are needed for change. ");
 			} 
+			if(fiveDollarBill > 0) {
+				System.out.println(fiveDollarBill + " five dollar bills are needed for change. "); 
+			}
 		}
 
 		// TODO don't forget to close the scanner!
