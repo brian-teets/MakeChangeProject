@@ -36,41 +36,51 @@ public class CashRegister {
 			// display the number of bills and coins that should be given to the customer. 
 		else if(amountTendered > purchasePrice){
 			System.out.println("The customer overpaid. You need to make change. ");
-			System.out.println(" ... calculating change needed, one moment ... "); 
+			System.out.println(" *** Change to give back to the customer: *** "); 
 			// TODO Seem to need some way of storing current count or tally and continuing to make change 
 				// test conditions in assignment will only check up through amount tendered of 20.00 
 			double changeRequired = amountTendered - purchasePrice; 
 			int dollars = (int)changeRequired; 
-			float cents = (float)(changeRequired - dollars); 
-			int tenDollarBill = dollars / 10;
-			int fiveDollarBill = (dollars % 10) / 5;
-			int oneDollarBill = ((dollars % 10) % 5 ) / 1; 
-			int quarter = (int)(cents / 0.25); 
+			float cents = (float)(changeRequired - dollars); // SD John suggested float to declare cents 
+				// as it would be a more accurate estimate
+			int fiftyDollarBill = dollars / 50;
+			int twentyDollarBill = (dollars % 50) / 20; 
+			int tenDollarBill = (dollars % 50 % 20) / 10; 
+			int fiveDollarBill = ((dollars % 50 % 20) % 10) / 5; // (dollars % 10) / 5;
+			int oneDollarBill =  ( (dollars % 50 % 20 % 10 % 5) ) / 1;  // ((dollars % 10) % 5 ) / 1; 
+			int quarter = (int)(cents / 0.25); // cents was declared as a float, so must cast an int, 
+				// since we're using decimals now 
 			int dime = (int)((cents % 0.25) / 0.10); 
 			int nickel = (int)(((cents % 0.25) % 0.10 ) / 0.05);  
 			int penny = (int)Math.round(( cents % 0.25 % 0.10 % 0.05 ) / 0.01 );  
 			
+			if(fiftyDollarBill > 0) {
+				System.out.println(fiftyDollarBill + " fifty dollar bill "); 
+			}
+			if(twentyDollarBill > 0) {
+				System.out.println(twentyDollarBill + " twenty dollar bill "); 
+			}
 			if(tenDollarBill > 0) {  
-				System.out.println(tenDollarBill + " ten dollar bills needed for change. ");
+				System.out.println(tenDollarBill + " ten dollar bill ");
 			} 
 			if(fiveDollarBill > 0) {
-				System.out.println(fiveDollarBill + " five dollar bills needed for change. "); 
+				System.out.println(fiveDollarBill + " five dollar bill "); 
 			}
 			if(oneDollarBill > 0) {
-				System.out.println(oneDollarBill + " one dollar bills needed for change. "); 
+				System.out.println(oneDollarBill + " one dollar bill "); 
 			}
 			if(quarter > 0) {
-				System.out.println(quarter + " quarters needed for change. "); 
+				System.out.println(quarter + " quarter "); 
 			}
 			if(dime > 0) {
-				System.out.println(dime + " dimes needed for change. "); 
+				System.out.println(dime + " dime "); 
 			}
 			if(nickel > 0) {
-				System.out.println(nickel + " nickels needed for change. "); 
+				System.out.println(nickel + " nickel "); 
 			}
 			if(penny > 0) {
-				System.out.println(penny + " pennies needed for change. "); 
-			}
+				System.out.println(penny + " penny "); 
+			} 
 		}
 
 		// TODO don't forget to close the scanner!
