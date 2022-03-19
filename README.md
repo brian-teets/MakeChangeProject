@@ -41,7 +41,7 @@ If the amount tendered is more than the cost of the item, display the number of 
 	* The program will now print out some information: 
 		* If the amount tendered is less than the purchase price, then you will see a message that not enough money was tendered by the customer. 
 		* If the amount tendered is exactly the amount of the purchase price, then you will see an appropriate message. 
-		* If the amount tendered is greater than the amount of the purchased item price, then the program will print out the appropriate amount of change to give back to the customer.
+		* If the amount tendered is greater than the amount of the purchased item price, then the program will print out the appropriate amount of change to give back to the customer, and each denomination of bills and coins needed will be printed to the console. 
 		
 * Note: This program does not have a loop implemented in the solution. To run various scenarios, the user will need to re-run the program. 
 
