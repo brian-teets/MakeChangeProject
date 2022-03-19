@@ -44,17 +44,32 @@ public class CashRegister {
 			float cents = (float)(changeRequired - dollars); 
 			int tenDollarBill = dollars / 10;
 			int fiveDollarBill = (dollars % 10) / 5;
-			int oneDollarBills = ((dollars % 10) % 5 ) / 1; 
+			int oneDollarBill = ((dollars % 10) % 5 ) / 1; 
 			int quarter = (int)(cents / 0.25); 
 			int dime = (int)((cents % 0.25) / 0.10); 
 			int nickel = (int)(((cents % 0.25) % 0.10 ) / 0.05);  
 			int penny = (int)Math.round(( cents % 0.25 % 0.10 % 0.05 ) / 0.01 );  
 			
 			if(tenDollarBill > 0) {  
-				System.out.println(tenDollarBill + " ten dollar bills are needed for change. ");
+				System.out.println(tenDollarBill + " ten dollar bills needed for change. ");
 			} 
 			if(fiveDollarBill > 0) {
-				System.out.println(fiveDollarBill + " five dollar bills are needed for change. "); 
+				System.out.println(fiveDollarBill + " five dollar bills needed for change. "); 
+			}
+			if(oneDollarBill > 0) {
+				System.out.println(oneDollarBill + " one dollar bills needed for change. "); 
+			}
+			if(quarter > 0) {
+				System.out.println(quarter + " quarters needed for change. "); 
+			}
+			if(dime > 0) {
+				System.out.println(dime + " dimes needed for change. "); 
+			}
+			if(nickel > 0) {
+				System.out.println(nickel + " nickels needed for change. "); 
+			}
+			if(penny > 0) {
+				System.out.println(penny + " pennies needed for change. "); 
 			}
 		}
 
