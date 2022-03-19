@@ -43,12 +43,14 @@ public class CashRegister {
 			int dollars = (int)changeRequired; // casting and reassigning the value of changeRequired 
 			float cents = (float)(changeRequired - dollars); // SD John suggested float to declare cents 
 				// as it would be a more accurate estimate
-			int hundredDollarBill = dollars / 100;
-			int fiftyDollarBill =  (dollars % 100)  / 50;
-			int twentyDollarBill = (dollars % 100 % 50) / 20; 
+			int hundredDollarBill = dollars / 100; 
+			// with each lower denomination, need to mod the value of dollars to get the remainder
+				// then divide the value of the current denomination 
+			int fiftyDollarBill =  (dollars % 100)  / 50; 
+			int twentyDollarBill = (dollars % 100 % 50) / 20; // then must add additional mod operator from each previous denomination 
 			int tenDollarBill = (dollars % 100 % 50 % 20) / 10; 
-			int fiveDollarBill = ((dollars % 100 % 50 % 20) % 10) / 5; // (dollars % 10) / 5;
-			int oneDollarBill =  ( (dollars % 100 % 50 % 20 % 10 % 5) ) / 1;  // ((dollars % 10) % 5 ) / 1; 
+			int fiveDollarBill = ((dollars % 100 % 50 % 20) % 10) / 5; 
+			int oneDollarBill =  ( (dollars % 100 % 50 % 20 % 10 % 5) ) / 1;   
 			int quarter = (int)(cents / 0.25); // cents was declared as a float, so must cast an int 
 				// since we're using decimals now 
 			int dime = (int)((cents % 0.25) / 0.10); 
@@ -157,3 +159,4 @@ public class CashRegister {
  * If the project does not work with the above test conditions, you will be given a 0 for this week's project.
  * 
 */
+// Have tested and passed test conditions listed. 
